@@ -123,6 +123,8 @@ end
 
 debug "Starting in #{options[:mode]} mode, loop is #{options[:loop]}, time constant is set to #{options[:time]}.", :green
 
-Stations.each do |station|
-  modes[options[:mode]].call(station)
-end
+begin
+  Stations.each do |station|
+    modes[options[:mode]].call(station)
+  end
+end while options[:loop]
