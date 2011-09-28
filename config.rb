@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-Stations = JSON.parse(
+stations = JSON.parse(
   <<-long
     [
     {
@@ -173,6 +173,25 @@ Stations = JSON.parse(
   ]
   long
 )
+
+class Station
+  attr_reader :name, :id, :time_from_prev_station, :destination_station, :origin_station, :station_id
+  def initialize(args)
+    args.keys.each { |name| instance_variable_set "@" + name.to_s, args[name] }
+  end
+  
+  def first_station?
+    ! @time_from_prev_station
+  end
+  
+  def end_station?
+    @destination_station == @station_id
+  end
+end
+
+Stations = stations.map do |station|
+  Station.new(station)
+end
 
 provider_id = 1
 line_id     = 1
