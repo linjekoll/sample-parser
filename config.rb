@@ -1,4 +1,7 @@
-stations = JSON.parse([
+# -*- encoding : utf-8 -*-
+Stations = JSON.parse(
+  <<-long
+    [
     {
         "name": "Mölndal centrum",
         "id": "00012110",
@@ -167,7 +170,9 @@ stations = JSON.parse([
         "origin_station": 20,
         "station_id": 21
     }
-])
+  ]
+  long
+)
 
 provider_id = 1
 line_id     = 1
