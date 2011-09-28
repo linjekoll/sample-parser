@@ -5,7 +5,7 @@ stations = JSON.parse([
         "time_from_prev_station": null,
         "destination_station": 21,
         "origin_station": null,
-        "station_id": 0
+        "station_id": 1
     },
     {
         "name": "Mölndals sjukhus",
@@ -13,7 +13,7 @@ stations = JSON.parse([
         "time_from_prev_station": 120,
         "destination_station": 21,
         "origin_station": 1,
-        "station_id": 1
+        "station_id": 2
     },
     {
         "name": "Lackarebäck",
@@ -21,7 +21,7 @@ stations = JSON.parse([
         "time_from_prev_station": 60,
         "destination_station": 21,
         "origin_station": 2,
-        "station_id": 2
+        "station_id": 3
     },
     {
         "name": "Krokslätts Fabriker",
@@ -29,7 +29,7 @@ stations = JSON.parse([
         "time_from_prev_station": 60,
         "destination_station": 21,
         "origin_station": 3,
-        "station_id": 3
+        "station_id": 4
     },
     {
         "name": "Krokslätts torg",
@@ -37,7 +37,7 @@ stations = JSON.parse([
         "time_from_prev_station": 60,
         "destination_station": 21,
         "origin_station": 4,
-        "station_id": 4
+        "station_id": 5
     },
     {
         "name": "Lana",
@@ -45,7 +45,7 @@ stations = JSON.parse([
         "time_from_prev_station": 60,
         "destination_station": 21,
         "origin_station": 5,
-        "station_id": 5
+        "station_id": 6
     },
     {
         "name": "Varbergsgatan",
@@ -53,7 +53,7 @@ stations = JSON.parse([
         "time_from_prev_station": 60,
         "destination_station": 21,
         "origin_station": 6,
-        "station_id": 6
+        "station_id": 7
     },
     {
         "name": "Elisedal",
@@ -61,7 +61,7 @@ stations = JSON.parse([
         "time_from_prev_station": 60,
         "destination_station": 21,
         "origin_station": 7,
-        "station_id": 7
+        "station_id": 8
     },
     {
         "name": "Almedal",
@@ -69,7 +69,7 @@ stations = JSON.parse([
         "time_from_prev_station": 60,
         "destination_station": 21,
         "origin_station": 8,
-        "station_id": 8
+        "station_id": 9
     },
     {
         "name": "Getebergsäng",
@@ -77,7 +77,7 @@ stations = JSON.parse([
         "time_from_prev_station": 120,
         "destination_station": 21,
         "origin_station": 9,
-        "station_id": 9
+        "station_id": 10
     },
     {
         "name": "Korsvägen",
@@ -85,7 +85,7 @@ stations = JSON.parse([
         "time_from_prev_station": 120,
         "destination_station": 21,
         "origin_station": 10,
-        "station_id": 10
+        "station_id": 11
     },
     {
         "name": "Berzeliigatan",
@@ -93,7 +93,7 @@ stations = JSON.parse([
         "time_from_prev_station": 60,
         "destination_station": 21,
         "origin_station": 11,
-        "station_id": 11
+        "station_id": 12
     },
     {
         "name": "Valand",
@@ -101,7 +101,7 @@ stations = JSON.parse([
         "time_from_prev_station": 120,
         "destination_station": 21,
         "origin_station": 12,
-        "station_id": 12
+        "station_id": 13
     },
     {
         "name": "Kungsportsplatsen",
@@ -109,7 +109,7 @@ stations = JSON.parse([
         "time_from_prev_station": 120,
         "destination_station": 21,
         "origin_station": 13,
-        "station_id": 13
+        "station_id": 14
     },
     {
         "name": "Brunnsparken",
@@ -117,7 +117,7 @@ stations = JSON.parse([
         "time_from_prev_station": 120,
         "destination_station": 21,
         "origin_station": 14,
-        "station_id": 14
+        "station_id": 15
     },
     {
         "name": "Centralstationen",
@@ -125,7 +125,7 @@ stations = JSON.parse([
         "time_from_prev_station": 120,
         "destination_station": 21,
         "origin_station": 15,
-        "station_id": 15
+        "station_id": 16
     },
     {
         "name": "Gamlestadstorget",
@@ -133,7 +133,7 @@ stations = JSON.parse([
         "time_from_prev_station": 360,
         "destination_station": 21,
         "origin_station": 16,
-        "station_id": 16
+        "station_id": 17
     },
     {
         "name": "Hjällbo",
@@ -141,7 +141,7 @@ stations = JSON.parse([
         "time_from_prev_station": 360,
         "destination_station": 21,
         "origin_station": 17,
-        "station_id": 17
+        "station_id": 18
     },
     {
         "name": "Hammarkullen",
@@ -149,7 +149,7 @@ stations = JSON.parse([
         "time_from_prev_station": 120,
         "destination_station": 21,
         "origin_station": 18,
-        "station_id": 18
+        "station_id": 19
     },
     {
         "name": "Storås",
@@ -157,7 +157,7 @@ stations = JSON.parse([
         "time_from_prev_station": 120,
         "destination_station": 21,
         "origin_station": 19,
-        "station_id": 19
+        "station_id": 20
     },
     {
         "name": "Angered Centrum",
@@ -165,7 +165,7 @@ stations = JSON.parse([
         "time_from_prev_station": 120,
         "destination_station": 21,
         "origin_station": 20,
-        "station_id": 20
+        "station_id": 21
     }
 ])
 
