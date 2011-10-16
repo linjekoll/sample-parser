@@ -2,7 +2,7 @@ source :gemcutter
 
 gem "json"
 gem "rest-client"
-gem "optparse"
+gem "foreman"
 
 group :test do
   gem "rspec"
