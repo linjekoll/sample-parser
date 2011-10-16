@@ -1,0 +1,1 @@
+server: bundle exec ruby worker.rb --simple
