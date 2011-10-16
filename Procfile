@@ -1,1 +1,1 @@
-server: bundle exec ruby worker.rb --simple
+server: bundle exec ruby worker.rb --simple --loop
