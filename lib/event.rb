@@ -27,15 +27,15 @@ class Event
   def push!
     raw = {
       event: @event,
-      origin_station: 8998235 || @origin_station,
-      destination_station: 898345 || @destination_station,
-      station_id: @station_id || 123123,
+      origin_station: 8998235 || @previous_station,
+      destination_station: 898345 || @next_station,
+      station_id: @sid || 123123,
       arrival_time: @arrival_time || 1235, 
       alert_message: @alert_message,
       line_id: @line_id || 2342,
-     }.to_json
+     }
      
      @event = nil
-     RestClient.get("http://46.16.232.244:3001/#{@api_key}/providers/#{@provider_id}/journeys/#{@journey_id}")
+     RestClient.put("http://46.16.232.244:3001/#{@api_key}/providers/#{@provider_id}/journeys/#{@journey_id}", raw)
   end
 end
