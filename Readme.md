@@ -1,5 +1,8 @@
 # Sample parser
 
+This is a simulation of Västtrafik's API.
+It provides a more reliable stream of data during development, then the real API.
+
 ## Installation
 
 Start by cloning the project using git.
@@ -10,7 +13,7 @@ Navigate to the downloaded folder and run bundler.
 
 `cd sample-parser && bundle install`
 
-## Start the server
+## Start parser
 
 `foreman start`
 
