@@ -24,11 +24,17 @@ class Event
     tap { @event = :alert }
   end
   
+  def post(raw)
+    RestClient.put("http://46.16.232.244:3001/#{@api_key}/providers/#{@provider_id}/journeys/#{@journey_id}", raw)
+  rescue RestClient::Exception => error
+    puts "Error: #{error.http_body}"
+  end
+  
   def push!
     raw = {
       event: @event,
-      origin_station: 8998235 || @previous_station,
-      destination_station: 898345 || @next_station,
+      previous_station: 8998235 || @previous_station,
+      next_station: 898345 || @next_station,
       station_id: @sid || 123123,
       arrival_time: @arrival_time || 1235, 
       alert_message: @alert_message,
@@ -36,6 +42,6 @@ class Event
      }
      
      @event = nil
-     RestClient.put("http://46.16.232.244:3001/#{@api_key}/providers/#{@provider_id}/journeys/#{@journey_id}", raw)
+     post(raw)
   end
 end

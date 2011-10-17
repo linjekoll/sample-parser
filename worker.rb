@@ -3,7 +3,6 @@ require "colorize"
 require "optparse"
 require "./lib/event"
 require "./lib/station"
-require "./config"
  
 def debug(message, color = :yellow)
   puts "%s %s\n\n" % ["==>".black, message.to_s.send(color)]
@@ -85,6 +84,10 @@ event = Event.new(provider_id: provider_id, line_id: line_id)
 
 # Simple mode, nothing goes wrong
 modes[:simple] = lambda do |station|
+  if station.end_station?
+    debug("#{station.name} is the end station"); return
+  end
+  
   event.set({
     journey_id: journey_id,
     arrival_time: Time.now.to_i + station.time_to_next_station, 
@@ -93,15 +96,14 @@ modes[:simple] = lambda do |station|
     sid: station.sid,
   }).did_leave_station.push!
   
-  debug "Leaving #{station.previous_station.name}, sending 'did_leave_station' to server."
-  debug "Heading towards #{station.name}, there in #{station.time_from_prev_station} seconds."
-  sleep_for(station.arrival_time, options[:time])
+  debug "Leaving #{station.name}, sending 'did_leave_station' to server."
+  debug "Heading towards #{station.name}, there in #{station.time_to_next_station} seconds."
+  sleep_for(station.time_to_next_station, options[:time])
 end
 
 debug "Starting in #{options[:mode]} mode, loop is #{options[:loop]}, time constant is set to #{options[:time]}.", :green
 
 stations = JSON.parse(File.read("static/stations.json")).map { |station| Station.new(station) }
-stations.map { |station| station.stations(stations) }
 
 begin
   stations.each do |station|
