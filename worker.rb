@@ -8,6 +8,10 @@ def debug(message, color = :yellow)
   puts "%s %s\n\n" % ["==>".black, message.to_s.send(color)]
 end
 
+def sleep_for(sec, time)
+  sleep(sec.to_f / time)
+end
+
 options = {}
 
 optparse = OptionParser.new do|opts|
@@ -47,40 +51,12 @@ end
 
 optparse.parse!
 
-def sleep_for(sec, time)
-  sleep(sec.to_f / time)
-end
-
-modes = {}
-
-#### A station
-# "id": 2,
-# "name": "Mölndals sjukhus",
-# "next_station": 4,
-# "previous_station": 1,
-# "sid": "00012130",
-# "time_to_next_station": 60
-
-#### Data that should be pushed
-# event: "event",
-# next_station: 8998235,
-# previous_station: 898345,
-# arrival_time: 1318843870,
-# alert_message: "oops!",
-# line_id: 2342
-
-#### Url data, that should be push through the url
-# api_key: d58e3582afa99040e27b92b13c8f2280
-# provider_id: 123123
-# journey_id: 123123123
-
-# Static data
-# journey_id should be incremented along the way
+event       = Event.new(provider_id: provider_id, line_id: line_id)
+stations    = JSON.parse(File.read("static/stations.json")).map { |station| Station.new(station) }
+modes       = {}
 provider_id = 1
 journey_id  = 1
 line_id     = "4"
-
-event = Event.new(provider_id: provider_id, line_id: line_id)
 
 # Simple mode, nothing goes wrong
 modes[:simple] = lambda do |station|
@@ -102,8 +78,6 @@ modes[:simple] = lambda do |station|
 end
 
 debug "Starting in #{options[:mode]} mode, loop is #{options[:loop]}, time constant is set to #{options[:time]}.", :green
-
-stations = JSON.parse(File.read("static/stations.json")).map { |station| Station.new(station) }
 
 begin
   stations.each do |station|
