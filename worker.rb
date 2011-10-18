@@ -53,10 +53,10 @@ optparse.parse!
 
 provider_id = 1
 journey_id  = 1
+line_id     = "4"
 event       = Event.new(provider_id: provider_id, line_id: line_id)
 stations    = JSON.parse(File.read("static/stations.json")).map { |station| Station.new(station) }
 modes       = {}
-line_id     = "4"
 
 # Simple mode, nothing goes wrong
 modes[:simple] = lambda do |station|
