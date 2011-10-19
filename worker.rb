@@ -52,7 +52,7 @@ end
 optparse.parse!
 
 provider_id = 1
-journey_id  = 1
+journey_id  = rand(10*10)
 line_id     = "4"
 event       = Event.new(provider_id: provider_id, line_id: line_id)
 stations    = JSON.parse(File.read("static/stations.json")).map { |station| Station.new(station) }
@@ -82,6 +82,7 @@ debug "Starting in #{options[:mode]} mode, loop is #{options[:loop]}, time const
 begin
   stations.each do |station|
     modes[options[:mode]].call(station)
+    sleep(rand(10)) # Simulates the train standing still on station
   end
   
   # This should be a new journey
