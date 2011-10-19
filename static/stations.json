@@ -1,7 +1,7 @@
 [{
   "id": 1,
   "name": "Mölndal centrum",
-  "next_station": 4,
+  "next_station": 2,
   "previous_station": 1,
   "sid": "00012110",
   "time_to_next_station": 120
