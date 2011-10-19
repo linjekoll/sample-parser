@@ -2,15 +2,15 @@
   "id": 1,
   "name": "Mölndal centrum",
   "next_station": 4,
-  "previous_station": null,
+  "previous_station": 1,
   "sid": "00012110",
   "time_to_next_station": 120
 },
 {
   "id": 2,
   "name": "Mölndals sjukhus",
-  "next_station": 4,
-  "previous_station": 1,
+  "next_station": 3,
+  "previous_station": 2,
   "sid": "00012130",
   "time_to_next_station": 60
 },
@@ -25,8 +25,8 @@
 {
   "id": 4,
   "name": "Krokslätts Fabriker",
-  "next_station": 4,
-  "previous_station": 3,
+  "next_station": null,
+  "previous_station": 4,
   "sid": "00012141",
   "time_to_next_station": null
 }]
