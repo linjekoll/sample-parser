@@ -1,32 +1,32 @@
 [{
-  "id": 1,
+  "id": 5,
   "name": "Mölndal centrum",
-  "next_station": 2,
-  "previous_station": 1,
+  "next_station": 6,
+  "previous_station": 5,
   "sid": "00012110",
   "time_to_next_station": 120
 },
 {
-  "id": 2,
+  "id": 6,
   "name": "Mölndals sjukhus",
-  "next_station": 3,
-  "previous_station": 2,
+  "next_station": 7,
+  "previous_station": 6,
   "sid": "00012130",
   "time_to_next_station": 60
 },
 {
-  "id": 3,
+  "id": 7,
   "name": "Lackarebäck",
-  "next_station": 4,
-  "previous_station": 2,
+  "next_station": 8,
+  "previous_station": 7,
   "sid": "00012140",
   "time_to_next_station": 60
 },
 {
-  "id": 4,
+  "id": 8,
   "name": "Krokslätts Fabriker",
   "next_station": null,
-  "previous_station": 4,
+  "previous_station": 8,
   "sid": "00012141",
   "time_to_next_station": null
 }]
