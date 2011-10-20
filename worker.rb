@@ -9,7 +9,7 @@ def debug(message, color = :yellow)
 end
 
 def sleep_for(sec, time)
-  sleep(sec.to_f / time)
+  sleep(sec)
 end
 
 options = {}
@@ -52,7 +52,7 @@ end
 optparse.parse!
 
 provider_id = 1
-journey_id  = rand(10**10)
+journey_id  = rand(10**4)
 line_id     = "4"
 event       = Event.new(provider_id: provider_id, line_id: line_id)
 stations    = JSON.parse(File.read("static/stations.json")).map { |station| Station.new(station) }
